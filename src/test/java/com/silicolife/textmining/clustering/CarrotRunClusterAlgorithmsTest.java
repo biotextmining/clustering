@@ -9,8 +9,8 @@ import org.junit.Test;
 import com.silicolife.textmining.DatabaseConnectionInit;
 import com.silicolife.textmining.clustering.carrotlinkage.CarrotClusterAlgorithmsEnum;
 import com.silicolife.textmining.clustering.carrotlinkage.CarrotRunClusterAlgorithms;
+import com.silicolife.textmining.core.datastructures.exceptions.process.InvalidConfigurationException;
 import com.silicolife.textmining.core.datastructures.init.exception.InvalidDatabaseAccess;
-import com.silicolife.textmining.core.datastructures.process.ir.configuration.IRSearchConfigurationImpl;
 import com.silicolife.textmining.core.interfaces.core.dataaccess.exception.ANoteException;
 import com.silicolife.textmining.core.interfaces.core.report.processes.ir.IIRSearchProcessReport;
 import com.silicolife.textmining.core.interfaces.process.IR.IIRSearchConfiguration;
@@ -18,11 +18,12 @@ import com.silicolife.textmining.core.interfaces.process.IR.IQuery;
 import com.silicolife.textmining.core.interfaces.process.IR.exception.InternetConnectionProblemException;
 import com.silicolife.textmining.core.interfaces.process.cluestering.ICLusteringReport;
 import com.silicolife.textmining.processes.ir.pubmed.PubMedSearch;
+import com.silicolife.textmining.processes.ir.pubmed.configuration.IRPubmedSearchConfigurationImpl;
 
 public class CarrotRunClusterAlgorithmsTest {
 
 	@Test
-	public void test() throws InvalidDatabaseAccess, ANoteException, InternetConnectionProblemException {
+	public void test() throws InvalidDatabaseAccess, ANoteException, InternetConnectionProblemException, InvalidConfigurationException {
 		DatabaseConnectionInit.init("localhost","3306","createdatest","root","admin");
 		IQuery query = createQuery().getQuery();
 		CarrotClusterAlgorithmsEnum algorithm = CarrotClusterAlgorithmsEnum.STC;
@@ -33,7 +34,7 @@ public class CarrotRunClusterAlgorithmsTest {
 	
 
 	public static IIRSearchProcessReport createQuery() throws InvalidDatabaseAccess,
-	ANoteException, InternetConnectionProblemException {
+	ANoteException, InternetConnectionProblemException, InvalidConfigurationException {
 		System.out.println("Create Query");
 		PubMedSearch pubmedSearch = new PubMedSearch();
 		// Properties
@@ -70,7 +71,7 @@ public class CarrotRunClusterAlgorithmsTest {
 		// Article Type
 		//propeties.put("articletype", "Revision");
 
-		IIRSearchConfiguration searchConfiguration = new IRSearchConfigurationImpl(keywords , organism , queryName, propeties );
+		IIRSearchConfiguration searchConfiguration = new IRPubmedSearchConfigurationImpl(keywords , organism , queryName, propeties );
 		IIRSearchProcessReport report = pubmedSearch.search(searchConfiguration);
 		return report;
 	}
