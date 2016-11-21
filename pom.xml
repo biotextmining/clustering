@@ -58,7 +58,16 @@
 				<groupId>org.apache.lucene</groupId>
 				<artifactId>lucene-queries</artifactId>
 			</exclusion>
+			<exclusion>
+				<groupId>org.apache.lucene</groupId>
+				<artifactId>lucene-backward-codecs</artifactId>
+			</exclusion>
 		</exclusions>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.lucene</groupId>
+	    <artifactId>lucene-backward-codecs</artifactId>
+	    <version>5.5.2</version>
 	</dependency>
   </dependencies>
 </project>
