@@ -17,7 +17,7 @@ public enum CarrotClusterAlgorithmsEnum {
 		{
 			STCClusteringAlgorithm stc = new STCClusteringAlgorithm();
 			stc.documents = documents;
-			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.queryInformation) && ((Boolean)properties.get(ClusterAlgorithmsPropertiesNames.queryInformation)))
+			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.queryInformation) && (Boolean.valueOf((String) properties.get(ClusterAlgorithmsPropertiesNames.queryInformation))))
 			{
 				if(keywords!=null)
 				{
@@ -35,27 +35,27 @@ public enum CarrotClusterAlgorithmsEnum {
 			}
 			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.documentCountBoost))
 			{
-				stc.documentCountBoost = (Double) properties.get(ClusterAlgorithmsPropertiesNames.documentCountBoost);
+				stc.documentCountBoost = Double.valueOf((String) properties.get(ClusterAlgorithmsPropertiesNames.documentCountBoost));
 			}
 			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.maxBaseClusters))
 			{
-				stc.maxBaseClusters = (Integer) properties.get(ClusterAlgorithmsPropertiesNames.maxBaseClusters);
+				stc.maxBaseClusters = Integer.valueOf((String) properties.get(ClusterAlgorithmsPropertiesNames.maxBaseClusters));
 			}
 			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.minBaseClusterScore))
 			{
-				stc.minBaseClusterScore = (Double) properties.get(ClusterAlgorithmsPropertiesNames.minBaseClusterScore);
+				stc.minBaseClusterScore = Double.valueOf((String) properties.get(ClusterAlgorithmsPropertiesNames.minBaseClusterScore));
 			}
 			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.minBaseClusterSize))
 			{
-				stc.minBaseClusterSize = (Integer) properties.get(ClusterAlgorithmsPropertiesNames.minBaseClusterSize);
+				stc.minBaseClusterSize = Integer.valueOf((String) properties.get(ClusterAlgorithmsPropertiesNames.minBaseClusterSize));
 			}
 			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.optimalPhraseLength))
 			{
-				stc.optimalPhraseLength = (Integer) properties.get(ClusterAlgorithmsPropertiesNames.optimalPhraseLength);
+				stc.optimalPhraseLength = Integer.valueOf((String) properties.get(ClusterAlgorithmsPropertiesNames.optimalPhraseLength));
 			}
 			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.singleTermBoost))
 			{
-				stc.singleTermBoost = (Double) properties.get(ClusterAlgorithmsPropertiesNames.singleTermBoost);
+				stc.singleTermBoost = Double.valueOf((String) properties.get(ClusterAlgorithmsPropertiesNames.singleTermBoost));
 			}
 			stc.process();
 			return stc.clusters;
@@ -71,9 +71,9 @@ public enum CarrotClusterAlgorithmsEnum {
 			lingo.documents = documents;
 			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.desiredClusterCountBase))
 			{
-				lingo.desiredClusterCountBase = (Integer) properties.get(ClusterAlgorithmsPropertiesNames.desiredClusterCountBase);
+				lingo.desiredClusterCountBase = Integer.valueOf((String) properties.get(ClusterAlgorithmsPropertiesNames.desiredClusterCountBase));
 			}
-			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.queryInformation) && ((Boolean)properties.get(ClusterAlgorithmsPropertiesNames.queryInformation)))
+			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.queryInformation) && (Boolean.valueOf((String)properties.get(ClusterAlgorithmsPropertiesNames.queryInformation))))
 			{
 				if(keywords!=null)
 				{
@@ -91,7 +91,7 @@ public enum CarrotClusterAlgorithmsEnum {
 			}
 			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.scoreWeight))
 			{
-				lingo.scoreWeight = (Double) properties.get(ClusterAlgorithmsPropertiesNames.scoreWeight);
+				lingo.scoreWeight = Double.valueOf((String) properties.get(ClusterAlgorithmsPropertiesNames.scoreWeight));
 			}
 			lingo.process();
 			return lingo.clusters;
@@ -106,23 +106,23 @@ public enum CarrotClusterAlgorithmsEnum {
 			kmeans.documents = documents;
 			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.clusterCount))
 			{
-				kmeans.clusterCount = (Integer) properties.get(ClusterAlgorithmsPropertiesNames.clusterCount);
+				kmeans.clusterCount = Integer.valueOf((String) properties.get(ClusterAlgorithmsPropertiesNames.clusterCount));
 			}
 			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.labelCount))
 			{
-				kmeans.labelCount = (Integer) properties.get(ClusterAlgorithmsPropertiesNames.labelCount);
+				kmeans.labelCount = Integer.valueOf((String) properties.get(ClusterAlgorithmsPropertiesNames.labelCount));
 			}
 			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.maxIterations))
 			{
-				kmeans.maxIterations = (Integer) properties.get(ClusterAlgorithmsPropertiesNames.maxIterations);
+				kmeans.maxIterations = Integer.valueOf((String) properties.get(ClusterAlgorithmsPropertiesNames.maxIterations));
 			}
 			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.partitionCount))
 			{
-				kmeans.partitionCount = (Integer) properties.get(ClusterAlgorithmsPropertiesNames.partitionCount);
+				kmeans.partitionCount = Integer.valueOf((String) properties.get(ClusterAlgorithmsPropertiesNames.partitionCount));
 			}
 			if(properties.containsKey(ClusterAlgorithmsPropertiesNames.useDimensionalityReduction))
 			{
-				kmeans.useDimensionalityReduction = (Boolean) properties.get(ClusterAlgorithmsPropertiesNames.useDimensionalityReduction);
+				kmeans.useDimensionalityReduction = Boolean.valueOf((String)properties.get(ClusterAlgorithmsPropertiesNames.useDimensionalityReduction));
 			}
 			kmeans.process();
 			return kmeans.clusters;
