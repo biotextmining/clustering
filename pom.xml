@@ -4,7 +4,7 @@
 
 	<groupId>com.silicolife.textmining</groupId>
 	<artifactId>clustering</artifactId>
-	<version>1.0.1</version>
+	<version>1.1.0</version>
 	<packaging>jar</packaging>
 
 	<name>clustering</name>
@@ -86,12 +86,12 @@
 		<dependency>
 			<groupId>com.silicolife.textmining</groupId>
 			<artifactId>core</artifactId>
-			<version>1.0.1</version>
+			<version>1.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.silicolife.textmining</groupId>
 			<artifactId>processes</artifactId>
-			<version>1.0.1</version>
+			<version>1.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.carrot2</groupId>
